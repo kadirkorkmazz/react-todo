@@ -1,12 +1,12 @@
 import React from 'react'
 
-function TodoListItem(props) {
+function TodoListItem({todoText, completed, id}) {
   return (
     <div>
-        <li className={props.completed}>
+        <li className= {completed ? "completed" : "uncomplited"} >
 				<div className="view">
-					<input className="toggle" type="checkbox"></input>
-					<label>{props.itemName}</label>
+					<input id={id} className="toggle" type="checkbox"></input>
+					<label>{todoText}</label>
 					<button className="destroy"></button>
 				</div>
 			</li>
