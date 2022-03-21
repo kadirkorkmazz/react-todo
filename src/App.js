@@ -14,19 +14,13 @@ function App() {
     <div className="App">
     <section className="todoapp">
     <header className="header">
-
     <Form tasks={tasks} setTasks={setTasks} inputText={inputText} setInputText={setInputText}/>
     </header>
-
     <section className="main">
-
-    <TodoList tasks ={tasks} />
+    <TodoList setTasks={setTasks} tasks ={tasks} />
     <Footer/>
     </section>
 
-
-
-        
 </section>
     </div>
   );

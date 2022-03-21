@@ -1,13 +1,33 @@
 import React from 'react'
+function TodoListItem({todoText, id, setTasks, tasks, task, completed}) {
 
-function TodoListItem({todoText, completed, id}) {
+
+	const handleDelete=(e)=> {
+		setTasks( tasks.filter((element)=> element.id !==task.id ));
+
+	}
+
+		const handleComplete = () => {
+			setTasks(tasks.map((item)=>{
+
+				if (item.id === task.id) {
+					return {
+						...item, completed: !item.completed
+					}
+				}
+				return item;
+
+			}))
+
+		}
+
   return (
     <div>
         <li className= {completed ? "completed" : "uncomplited"} >
 				<div className="view">
-					<input id={id} className="toggle" type="checkbox"></input>
+					<input onClick={handleComplete} id={id} className="toggle" type="checkbox"  ></input>
 					<label>{todoText}</label>
-					<button className="destroy"></button>
+					<button className="destroy" onClick={handleDelete}></button>
 				</div>
 			</li>
     </div>

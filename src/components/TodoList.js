@@ -1,7 +1,9 @@
 import React from 'react'
 import TodoListItem from './TodoListItem'
 
-function TodoList({tasks}) {
+function TodoList({tasks, setTasks}) {
+
+
   return (
     <div>
         <input className="toggle-all" type="checkbox"></input>
@@ -9,15 +11,14 @@ function TodoList({tasks}) {
 			Mark all as complete
 		</label>
 
-
-
 		<ul className="todo-list">
 
-    {tasks.map(task => 
-
-<TodoListItem todoText={task.text} completed= {task.completed} key={task.id}  />
+    {tasks.map(task =>
+ 
+    
+<TodoListItem task={task} tasks={tasks} setTasks={setTasks} todoText={task.text} completed={task.completed} key={task.id}  />
+ 
 )}
-
 
 		</ul>
     </div>
@@ -26,9 +27,3 @@ function TodoList({tasks}) {
 
 
 export default TodoList
-
-/*
-    <TodoListItem todoText={tasks[0].text} completed= {tasks[0].completed} />
-
-
-*/
