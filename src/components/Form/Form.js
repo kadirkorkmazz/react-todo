@@ -9,7 +9,7 @@ function Form({tasks, setTasks, inputText, setInputText}) {
 
   const addTask=(e)=>{
     e.preventDefault();
-    setTasks( [...tasks, {text: inputText, complete:false, id:Math.round(Math.random() * 10000)}]);
+    setTasks( [...tasks, {text: inputText, completed:false, id:Math.round(Math.random() * 10000)}]);
     setInputText("");
     console.log(tasks);
 

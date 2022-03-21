@@ -1,7 +1,7 @@
 import React from 'react'
 import TodoListItem from './TodoListItem'
 
-function TodoList({tasks, setTasks}) {
+function TodoList({tasks, setTasks, filteredTasks}) {
 
 
   return (
@@ -13,10 +13,9 @@ function TodoList({tasks, setTasks}) {
 
 		<ul className="todo-list">
 
-    {tasks.map(task =>
+    {filteredTasks.map(task =>
  
-    
-<TodoListItem task={task} tasks={tasks} setTasks={setTasks} todoText={task.text} completed={task.completed} key={task.id}  />
+<TodoListItem filteredTasks={filteredTasks} task={task} tasks={tasks} setTasks={setTasks} todoText={task.text} completed={task.completed} key={task.id}  />
  
 )}
 

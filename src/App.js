@@ -1,14 +1,33 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import Footer from './components/Footer';
 import Form from './components/Form/Form';
 import TodoList from './components/TodoList';
 
-
 function App() {
 
   const [inputText, setInputText] = useState("")
-  const [tasks, setTasks] = useState([{text: "First Lesson", completed:false, id:33}]);
+  const [tasks, setTasks] = useState([]);
+  const [status, setStatus] = useState("all");
+  const [filteredTasks, setFilteredTasks] = useState([]);
+
+  useEffect(() => {
+    handleFilters();
+  }, [tasks, status])
+
+  const handleFilters = ()=> {
+    switch (status) {
+      case "active":
+        setFilteredTasks(tasks.filter((element)=> element.completed !==true ));
+        break;
+      case "completed":
+        setFilteredTasks(tasks.filter((element)=> element.completed ===true ));
+        break;
+      default:
+        setFilteredTasks(tasks);
+        break;
+    }
+  }
 
   return (
     <div className="App">
@@ -17,8 +36,8 @@ function App() {
     <Form tasks={tasks} setTasks={setTasks} inputText={inputText} setInputText={setInputText}/>
     </header>
     <section className="main">
-    <TodoList setTasks={setTasks} tasks ={tasks} />
-    <Footer/>
+    <TodoList setTasks={setTasks} tasks ={tasks} filteredTasks={filteredTasks} />
+    <Footer setStatus={setStatus}  />
     </section>
 
 </section>

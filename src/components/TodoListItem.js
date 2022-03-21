@@ -6,7 +6,6 @@ function TodoListItem({todoText, id, setTasks, tasks, task, completed}) {
 		setTasks( tasks.filter((element)=> element.id !==task.id ));
 
 	}
-
 		const handleComplete = () => {
 			setTasks(tasks.map((item)=>{
 
@@ -23,7 +22,7 @@ function TodoListItem({todoText, id, setTasks, tasks, task, completed}) {
 
   return (
     <div>
-        <li className= {completed ? "completed" : "uncomplited"} >
+        <li className= {completed ? "completed" : ""} >
 				<div className="view">
 					<input onClick={handleComplete} id={id} className="toggle" type="checkbox"  ></input>
 					<label>{todoText}</label>
