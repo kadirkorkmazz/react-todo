@@ -2,24 +2,20 @@ import React from 'react'
 import { useState } from 'react';
 
 
-function Footer({setStatus,filteredTasks, tasks}) {
+function Footer({setStatus, tasks, setTasks}) {
     const [isSelected, setIsSelected] = useState ("all");
 
     let activeTasks = (tasks.filter((element)=> element.completed !==true ));
-
     let activeTasksNumber = Object.keys(activeTasks).length;
 
     const handleStatus = (e)=> {
-        
         if (e.target.className.includes("active")) {
             setStatus("active")
             setIsSelected("active")
 
-
         }else if(e.target.className.includes("completed")){
             setStatus("completed")
             setIsSelected("completed")
-
 
         }
          else if(e.target.className.includes("all")) {
@@ -27,14 +23,15 @@ function Footer({setStatus,filteredTasks, tasks}) {
             setIsSelected("all")
 
         }
+    }
 
-
+    const handleClearComplete = ()=>{
+        setTasks(tasks.filter((element)=> element.completed !==true ));
     }
 
   return (
     <div>
     <footer className="footer">
-
 <span className="todo-count">
     <strong>{activeTasksNumber}</strong> 
      {activeTasksNumber <2 ? " item left" : " items left"}
@@ -52,7 +49,7 @@ function Footer({setStatus,filteredTasks, tasks}) {
     </li>
 </ul>
 
-<button className="clear-completed">
+<button onClick={handleClearComplete} className="clear-completed">
     Clear completed
 </button>
 </footer>

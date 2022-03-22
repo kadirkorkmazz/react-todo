@@ -38,7 +38,7 @@ function App() {
     </header>
     <section className="main">
     <TodoList setTasks={setTasks} tasks ={tasks} filteredTasks={filteredTasks} />
-    <Footer tasks={tasks} setStatus={setStatus}  />
+    <Footer tasks={tasks} setTasks={setTasks} setStatus={setStatus}  />
     </section>
 
 </section>

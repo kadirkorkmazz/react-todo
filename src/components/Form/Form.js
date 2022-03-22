@@ -11,8 +11,6 @@ function Form({tasks, setTasks, inputText, setInputText}) {
     e.preventDefault();
     setTasks( [...tasks, {text: inputText, completed:false, id:Math.round(Math.random() * 10000)}]);
     setInputText("");
-    console.log(tasks);
-
   }
 
   return (

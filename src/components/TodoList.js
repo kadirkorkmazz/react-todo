@@ -3,7 +3,6 @@ import TodoListItem from './TodoListItem'
 
 function TodoList({tasks, setTasks, filteredTasks}) {
 
-
   return (
     <div>
         <input className="toggle-all" type="checkbox"></input>
@@ -12,13 +11,9 @@ function TodoList({tasks, setTasks, filteredTasks}) {
 		</label>
 
 		<ul className="todo-list">
-
-    {filteredTasks.map(task =>
- 
-<TodoListItem filteredTasks={filteredTasks} task={task} tasks={tasks} setTasks={setTasks} todoText={task.text} completed={task.completed} key={task.id}  />
- 
+      {filteredTasks.map(task =>
+       <TodoListItem filteredTasks={filteredTasks} task={task} tasks={tasks} setTasks={setTasks} todoText={task.text} completed={task.completed} key={task.id}  />
 )}
-
 		</ul>
     </div>
   )
