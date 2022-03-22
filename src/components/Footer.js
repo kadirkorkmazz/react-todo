@@ -2,8 +2,12 @@ import React from 'react'
 import { useState } from 'react';
 
 
-function Footer({setStatus}) {
+function Footer({setStatus,filteredTasks, tasks}) {
     const [isSelected, setIsSelected] = useState ("all");
+
+    let activeTasks = (tasks.filter((element)=> element.completed !==true ));
+
+    let activeTasksNumber = Object.keys(activeTasks).length;
 
     const handleStatus = (e)=> {
         
@@ -32,8 +36,8 @@ function Footer({setStatus}) {
     <footer className="footer">
 
 <span className="todo-count">
-    <strong>2 </strong> 
-     items left
+    <strong>{activeTasksNumber}</strong> 
+     {activeTasksNumber <2 ? " item left" : " items left"}
 </span>
 
 <ul className="filters">

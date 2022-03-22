@@ -13,6 +13,7 @@ function App() {
 
   useEffect(() => {
     handleFilters();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tasks, status])
 
   const handleFilters = ()=> {
@@ -37,7 +38,7 @@ function App() {
     </header>
     <section className="main">
     <TodoList setTasks={setTasks} tasks ={tasks} filteredTasks={filteredTasks} />
-    <Footer setStatus={setStatus}  />
+    <Footer tasks={tasks} setStatus={setStatus}  />
     </section>
 
 </section>
