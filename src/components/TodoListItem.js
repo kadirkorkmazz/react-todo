@@ -1,7 +1,6 @@
 import React from 'react'
 function TodoListItem({todoText, id, setTasks, tasks, task, completed}) {
 
-
 	const handleDelete=(e)=> {
 		setTasks( tasks.filter((element)=> element.id !==task.id ));
 
@@ -25,7 +24,7 @@ function TodoListItem({todoText, id, setTasks, tasks, task, completed}) {
         <li className= {completed ? "completed" : ""} >
 				<div className="view">
 					<input onClick={handleComplete} id={id} className="toggle" type="checkbox"  ></input>
-					<label>{todoText}</label>
+					<label >{todoText}</label>
 					<button className="destroy" onClick={handleDelete}></button>
 				</div>
 			</li>
