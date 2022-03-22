@@ -1,7 +1,12 @@
 # React Todo App
 
+## 🔴Live: Projeyi [buradan](https://react-todo-rose.vercel.app/) inceleyebilirsiniz.
+
+##
+##
 HTML/CSS template'i [buradan](https://codepen.io/mehmetseven/pen/OJRzLjV) alınıp, react ile tamamlandı.
 
+#
 
 
 ## Available Scripts
