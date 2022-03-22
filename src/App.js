@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import Footer from './components/Footer';
+import FooterInfo from './components/FooterInfo';
 import Form from './components/Form/Form';
 import TodoList from './components/TodoList';
 
@@ -40,9 +41,10 @@ function App() {
     <TodoList setTasks={setTasks} tasks ={tasks} filteredTasks={filteredTasks} />
     <Footer tasks={tasks} setTasks={setTasks} setStatus={setStatus}  />
     </section>
-
-</section>
+    </section>
+      <FooterInfo/>
     </div>
+    
   );
 }
 

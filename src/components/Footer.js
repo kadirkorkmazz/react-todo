@@ -54,7 +54,9 @@ function Footer({setStatus, tasks, setTasks}) {
 </button>
 </footer>
     </div>
+    
   )
+
 }
 
 export default Footer
